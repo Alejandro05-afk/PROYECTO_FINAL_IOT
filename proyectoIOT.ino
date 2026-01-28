@@ -1,11 +1,15 @@
-// ================= LIBRERÍAS =================
+//LIBRERÍAS
 // SoftwareSerial: permite comunicación serial por pines digitales
 #include <SoftwareSerial.h>
 // Servo: controla servomotores
 #include <Servo.h>
 
+<<<<<<< HEAD
 
 /* ================= ESP8266 ================= */
+=======
+/*ESP8266*/
+>>>>>>> origin/patch-1
 // Comunicación serial con el ESP8266 usando pines 11 (RX) y 12 (TX)
 SoftwareSerial esp8266(11, 12);
 
@@ -19,7 +23,11 @@ String apiKey   = "OHTQG3HT6U946GX1";
 // Host de ThingSpeak
 String host     = "api.thingspeak.com";
 
+<<<<<<< HEAD
 /* ================= PINES ================= */
+=======
+/*PINES*/
+>>>>>>> origin/patch-1
 // Sensor ultrasónico
 #define TRIG_PIN 2
 #define ECHO_PIN 3
@@ -37,13 +45,21 @@ String host     = "api.thingspeak.com";
 #define SOUND_PIN 6
 #define LED_PUERTA 13
 
+<<<<<<< HEAD
 /* ================= OBJETOS ================= */
+=======
+/* OBJETOS */
+>>>>>>> origin/patch-1
 // Objeto servo para la puerta
 Servo servoPuerta;
 // Objeto servo para el sensor de lluvia
 Servo servoLluvia;
 
+<<<<<<< HEAD
 /* ================= VARIABLES ================= */
+=======
+/* VARIABLES */
+>>>>>>> origin/patch-1
 // Estado actual del LED controlado por aplausos
 bool estadoLED = false;
 
@@ -62,7 +78,11 @@ unsigned long ultimoAplauso = 0;
 // Marca de tiempo de la última lectura de sensores
 unsigned long ultimaLectura = 0;
 
+<<<<<<< HEAD
 /* ================= CONSTANTES ================= */
+=======
+/*  CONSTANTES  */
+>>>>>>> origin/patch-1
 // Tiempo antirebote para aplausos
 const unsigned long TIEMPO_REBOTE = 600;
 
@@ -72,12 +92,20 @@ const unsigned long INTERVALO_SENSORES = 300;
 // Tiempo considerado sin lluvia
 const unsigned long TIEMPO_SIN_LLUVIA = 2000;
 
+<<<<<<< HEAD
 /* ================= TIEMPO ENVÍO ================= */
+=======
+/*TIEMPO ENVÍO */
+>>>>>>> origin/patch-1
 // Intervalo de envío de datos a ThingSpeak (5 minutos)
 const unsigned long INTERVALO_ENVIO = 300000;
 unsigned long ultimoEnvio = 0;
 
+<<<<<<< HEAD
 /* ================= ACUMULADORES ================= */
+=======
+/* ACUMULADORES */
+>>>>>>> origin/patch-1
 // Acumuladores para promedios
 long sumaDistancia = 0;
 long sumaLluvia = 0;
@@ -86,8 +114,12 @@ int conteoLecturas = 0;
 // Contador de aplausos detectados
 int contadorAplausos = 0;
 
+<<<<<<< HEAD
 /* ================================================= */
 /* ===== ULTRASONICO ===== */
+=======
+/* ULTRASONICO*/
+>>>>>>> origin/patch-1
 // Función para medir distancia usando el sensor HC-SR04
 long medirDistancia() {
   // Pulso bajo inicial
@@ -106,7 +138,11 @@ long medirDistancia() {
   return duracion * 0.034 / 2;
 }
 
+<<<<<<< HEAD
 /* ===== PUERTA ===== */
+=======
+/* PUERTA*/
+>>>>>>> origin/patch-1
 // Controla la apertura/cierre de la puerta según la distancia
 void controlarPuerta(long distancia) {
   // Si el objeto está dentro del rango permitido
@@ -118,4 +154,8 @@ void controlarPuerta(long distancia) {
     servoPuerta.write(0);           // Cierra la puerta
     digitalWrite(LED_PUERTA, HIGH); // Enciende LED indicador
   }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> origin/patch-1
